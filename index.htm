@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap"
+			rel="stylesheet"
+		/>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Comandas de Restaurante em JS</title>
+		<link rel="stylesheet" href="style.css" />
+		<meta name="author" content="Bernardo Vaz" />
+		<meta name="description" content="Desafio - Comandas de Restaurante" />
+		<link
+			id="svg-favicon"
+			rel="icon"
+			type="image/svg+xml"
+			sizes="any"
+			href="https://icon-icons.com/downloadimage.php?id=255918&root=4026/ICO/32/&file=loading_icon_255918.ico"
+		/>
+		<script defer src="./script.js"></script>
+	</head>
+	<body>
+		<div class="scroll">
+			<a href="#main" id="scroll-top">&#708;</a>
+		</div>
+		<main id="main">
+			<div class="test-description">
+				<h1 class="title">Desafio - Comandas de Restaurante</h1>
+
+				<img
+					id="shield"
+					alt="JavaScript"
+					src="https://img.shields.io/badge/JavaScript-%2300000000?style=for-the-badge&logo=javascript&logoColor=F7DF1E"
+				/>
+				<div id="switch" onclick="toggleMode()">
+					<button></button>
+					<span></span>
+				</div>
+
+				<div class="quill">
+					<div class="ql-container ql-snow ql-disabled">
+						<div
+							class="ql-editor"
+							data-gramm="false"
+							contenteditable="false"
+						>
+							<details open>
+								<summary>
+									<h2>Contextualização:</h2>
+								</summary>
+								<p>
+									Você é responsável pelo sistema de
+									atendimentos e geração de comandas de um
+									restaurante. Todas as mesas geram uma lista
+									de itens consumidos.
+								</p>
+								<p><br /></p>
+								<p>
+									Uma das principais funcionalidades desse
+									sistema é dividir o valor total de consumo
+									pelo número de clientes da mesa, mas uma
+									melhoria foi apontada: nem todos os itens
+									consumidos devem ser incluídos na divisão
+									comum da conta (entre todos os clientes na
+									mesa).
+								</p>
+								<p><br /></p>
+								<p>Exemplo:</p>
+								<p>
+									Em uma mesa com o número de clientes C=4,
+									foram consumidos os seguintes itens com seus
+									respectivos valores:
+								</p>
+								<p><br /></p>
+								<ol>
+									<li>bebidas: 150</li>
+									<li>entrada: 100</li>
+									<li>principal: 400</li>
+									<li>sobremesa: 300</li>
+									<li>reserva: 40</li>
+								</ol>
+								<p><br /></p>
+								<p>
+									Foi identificado que os itens "bebidas" e
+									"reservas" não vão fazer parte da divisão
+									comum da conta. Podemos concluir então que:
+								</p>
+								<ol>
+									<li>
+										O valor total da conta é
+										<strong>990</strong>
+									</li>
+									<li>
+										O valor que cada cliente da mesa deve
+										pagar na divisão comum é
+										<strong>200</strong>, visto que o total
+										de itens, com exceção dos itens
+										"bebidas" e "reserva", é 800 e devemos
+										dividir esse valor pelos 4 clientes da
+										mesa.
+									</li>
+									<li>
+										Por fim, o valor resultante dos itens
+										"bebidas" e "reserva", desconsiderados
+										na divisão comum é
+										<strong>190</strong>.
+									</li>
+								</ol>
+								<p><br /></p>
+								<p><strong>Seu desafio:</strong></p>
+								<p>
+									Com base nos itens consumidos em uma mesa,
+									no número de clientes da mesa e nos itens
+									que devem ser retirados da divisão comum,
+									você deve ser capaz de determinar:
+								</p>
+								<ol>
+									<li>O valor total da conta;</li>
+									<li>
+										O valor que cada cliente deve pagar
+										resultante da divisão comum.
+									</li>
+									<li>
+										Por fim, o valor total resultante dos
+										itens que não fizeram parte da divisão
+										comum.
+									</li>
+								</ol>
+								<p><br /></p>
+								<p>
+									Obs.: Todos os valores de saída devem ser
+									convertidos para o tipo "inteiro", evitando
+									problemas de formatação da sua resposta.
+								</p>
+								<p><br /></p>
+								<p>
+									<strong
+										>Formato de Entrada (todas as linhas de
+										entrada são do tipo string):</strong
+									>
+								</p>
+								<ol>
+									<li>
+										A primeira linha contém o número C de
+										clientes da mesa
+									</li>
+									<li>
+										A segunda linha contém a quantidade N de
+										itens consumidos
+									</li>
+									<li>
+										As N linhas seguintes trazem cada uma,
+										um item e seu respectivo valor separados
+										por espaço.
+									</li>
+									<li>
+										A linha seguinte contém os itens que
+										devem ser desconsiderados na divisão
+										comum, separados por espaço
+									</li>
+								</ol>
+								<p><br /></p>
+								<p>
+									<strong
+										>Formato de Saída (todas as linhas de
+										saída devem ser convertidas para o tipo
+										"inteiro"):</strong
+									>
+								</p>
+								<ol>
+									<li>
+										A primeira linha deve conter o valor
+										total da conta
+									</li>
+									<li>
+										A segunda linha deve conter o valor que
+										cada cliente precisa pagar como
+										resultado da divisão comum.
+									</li>
+									<li>
+										A terceira linha deve conter o valor
+										total resultante dos itens que não
+										fizeram parte da divisão comum
+									</li>
+								</ol>
+								<p><br /></p>
+							</details>
+							<p><strong>Exemplo de entrada:</strong></p>
+							<button
+								id="select"
+								type="button"
+								onclick="selectElementText(inputExample)"
+							>
+								<ion-item class="icon">
+									<ion-icon
+										class="icon"
+										item-start
+										name="copy-outline"
+										title="select"
+									>
+									</ion-icon>
+									<ion-label class="icon"
+										>SELECIONAR</ion-label
+									>
+								</ion-item>
+							</button>
+							<pre
+								id="ql-input"
+								class="input"
+								spellcheck="false"
+							></pre>
+							<p><br /></p>
+							<p><strong>Exemplo de saída:</strong></p>
+							<pre
+								id="ql-output"
+								class="ql-syntax"
+								spellcheck="false"
+							></pre>
+						</div>
+					</div>
+				</div>
+			</div>
+			<h2>Solução:</h2>
+			<textarea
+				class="input"
+				placeholder="Insira as entradas"
+				id="source"
+				rows="8"
+				cols="60"
+			></textarea>
+			<div id="result"></div>
+		</main>
+		<footer>
+			<p>Desenvolvido por Bernardo Vaz</p>
+			<p id="time">&lt;/&gt;</p>
+			<p>
+				<input type="checkbox" id="reload" name="reload" /> Perguntar ao
+				fechar aba
+			</p>
+		</footer>
+
+		<script
+			type="module"
+			src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+		></script>
+		<script
+			nomodule
+			src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+		></script>
+	</body>
+</html>
