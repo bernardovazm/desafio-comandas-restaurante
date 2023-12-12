@@ -27,7 +27,7 @@ This is a JavaScript solution to the tickets challenge. You can see the site wit
 ### Description
 
 <p>Tickets in a Restaurant</p>
-<p><strong>Contextualization:</strong></p>
+<p><strong>Context:</strong></p>
 <p>
 You are responsible for the customer service system and generation of
 you run a restaurant. All tables generate a list
@@ -169,10 +169,10 @@ reserve drinks
 
 -   Semantic HTML5 markup
 -   CSS custom properties
+-   Functional programming with JavaScript
 
 ## Author
 
 -   Github - [bernardovazm](https://github.com/bernardovazm)
 -   Frontend Mentor - [@bernardovazm](https://www.frontendmentor.io/profile/bernardovazm)
 -   LinkedIn - [Bernardo Vaz](https://www.linkedin.com/in/bernardovazm/)
-# desafio-comandas-restaurante
