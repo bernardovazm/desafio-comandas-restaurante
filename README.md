@@ -16,7 +16,7 @@ This is a JavaScript solution to the tickets challenge. You can see the site wit
 
 ### Screenshot
 
-![](.github/preview.png)
+![](.github/Screenshot_2.png)
 
 ### Link
 
